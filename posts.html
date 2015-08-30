@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Calendar &#8211; SCC : SCC</title>
+    <title>Dashboard &#8211; SCC : SCC</title>
     <meta name="description" content="SCC"/>
     <meta name="author" content="Albert Hardy">
     
-    <link rel="canonical" href="http://waroengboedaya.github.io/scc/calendar/">
+    <link rel="canonical" href="http://waroengboedaya.github.io/scc/posts.html">
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,9 +32,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Calendar">
+    <meta property="og:title" content="Dashboard">
     <meta property="og:description" content="bootstrap portal with navigation">
-    <meta property="og:url" content="http://waroengboedaya.github.io/calendar/">
+    <meta property="og:url" content="http://waroengboedaya.github.io/posts.html">
     <meta property="og:site_name" content="SCC">
 
     <!-- Icons -->
@@ -107,105 +107,50 @@
             <ol class="breadcrumb">
               <li><a href="/scc">Home</a></li>  
               <!--  <li><a href="/Beneficiary/Index">Home</a></li> -->
-              <li class="active">Calendar</li>
+              <li class="active">Dashboard</li>
             </ol>
           </div>
-          <h1 class="pull-left">Calendar</h1>
+          <h1 class="pull-left">Dashboard</h1>
           <div class="pull-right hidden-xs" style="margin-top:20px; ">   </div>
         </div>
       </div>
     </div>
     
     <div class="row" style="margin-bottom:20px;">
-      <div class="col-md-12"> <main id="content" class="content" role="main">
-    <div class="panel panel-default">
-  <div class="panel-heading">TO DO - Text Calendar (Due Date)  <div id="listMenu" class="pull-right">
-        <div class="btn-group  btn-group-xs">
-          <div class="btn-group btn-group-xs"> <a href="/edit/" class="btn btn-default" style="font-size: 11px;"><i class="fa fa-plus"></i>&nbsp;&nbsp;New</a>
-            <button type="button" data-toggle="dropdown" class="btn btn-default  dropdown-toggle btn-xs" style="font-size: 11px;"><i class="fa fa-eye"></i>&nbsp;&nbsp;View&nbsp;<span class="caret"></span></button>
-            <ul class="dropdown-menu" style="font-size: 11px;">
-              <li class="active"><a href="/list/" onclick="" class="active"><i class="fa fa-list"></i>&nbsp;&nbsp;List View</a></li>
-              <li><a href="/calendar/" onclick=""><i class="fa fa-calendar"></i>&nbsp;&nbsp;Calendar View</a></li>
-              <li><a href="/view/" onclick=""><i class="fa fa-print"></i>&nbsp;&nbsp;Print View</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-filter"></i>&nbsp;&nbsp;Show Query Filter</a></li>
-              <li><a href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Show Entity Search</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" data-toggle="dropdown" class="btn btn-default  dropdown-toggle btn-xs" style="font-size: 11px;"><i class="fa fa-database"></i>&nbsp;&nbsp;Admin&nbsp;<span class="caret"></span></button>
-            <ul class="dropdown-menu" style="font-size: 11px;">
-              <li><a href="#"><i class="fa fa-download"></i>&nbsp;&nbsp;Export ALL</a></li>
-              <li><a href="#"><i class="fa fa-upload"></i>&nbsp;&nbsp;Import ALL</a></li>
-              <li><a href="#"><i class="fa fa-clock-o"></i>&nbsp;&nbsp;Import Last (Recursive)</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Rebuild Search Index</a></li>
-            </ul>
-          </div>
+      <div class="col-md-12"> <!-- <header class="main-header no-cover">
+    <nav class="main-nav overlay clearfix">
+            
+        <a class="subscribe-button icon-feed" href="/sccrss.xml">Subscribe</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title"><a href="/scc">
+                   SCC
+                </a></h1>
+            <h2 class="page-description">
+                 SCC. 
+                
+                
+            </h2>
         </div>
-      </div>  <div class="clearfix"></div></div>
-  <div class="panel-body">
-
-  <nav >
-<div class="pull-left"><div class="input-group  input-group-sm pull-right" style="font-size:11px; width:200px; ">
-      <input type="text" class="form-control" placeholder="Quick Filter">
-    <!--   <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span> -->
-    </div><!-- /input-group --></div>
-
-<div class=" pull-right"><div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-primary active">Category</button>
-  <button type="button" class="btn btn-default">Area</button>
-  <button type="button" class="btn btn-default">CI</button>
-  <button type="button" class="btn btn-default">Priority</button>
-  <button type="button" class="btn btn-default">Status</button>
-  <button type="button" class="btn btn-default">Owner</button>
-</div></div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+ -->
+<main id="content" class="content" role="main">
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="pagination">
     
-
-
-
-
+    <span class="page-number"> Page  of  </span>
+     
 </nav>
-
-<div class="clearfix"></div>
-
-  
-      <div  style="margin:20px 0">
-<div id='calendar'></div>
-</div>
-<!-- <nav>
-<div class="pull-left"><span style="font-size:12px">Page 1 of 5 (50 of 228 rows listed)</span></div>
-<ul class="pagination pagination-sm pull-right" style="margin:0">
-    <li>
-      <a href="#" aria-label="Previous">
-        <i class="fa fa-fast-backward"></i>
-      </a>
-    </li><li>
-      <a href="#" aria-label="Previous">
-        <i class="fa fa-backward"></i>
-      </a>
-    </li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-   <li>
-      <a href="#" aria-label="Previous">
-        <i class="fa fa-forward"></i>
-      </a>
-    </li><li>
-      <a href="#" aria-label="Previous">
-        <i class="fa fa-fast-forward"></i>
-      </a>
-    </li>
-  </ul>
-</nav> -->
-  </div>
-</div>
-
+    </div>
+    
+    <nav class="pagination" role="pagination">
+    
+    <span class="page-number"> Page  of  </span>
+     
+</nav>
 </main>
  </div>
     </div><!-- /.row -->

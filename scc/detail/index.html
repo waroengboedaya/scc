@@ -178,7 +178,7 @@
   </div>
   <div class="row" style="margin-top:20px; margin-bottom:20px">
     <div class="col-md-12">
-      <h4 class="text-primary" style="margin-top:0px;"><i class="fa fa-warning" style=" color:#F90"></i> Beneficiary who did not collect more than 3 times</h4>
+      <h4 class="text-primary" style="margin-top:0px;"><i class="fa fa-warning" style=" color:#F90"></i> Beneficiary who did not collect more than 3 times Consecutively</h4>
       <table id="highlighttable" class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -213,6 +213,7 @@
           <li class="active"><a href="#tab_distributions" data-toggle="pill">Distributions</a></li>
           <li><a href="#tab_beneficiaries" data-toggle="pill">Beneficiaries</a></li>
           <li><a href="#tab_centeradmins" data-toggle="pill">Center Admins</a></li>
+            <li><a href="#tab_centerhistory" data-toggle="pill">Center History</a></li>
         </ul>
       </div>
     </div>
@@ -274,7 +275,7 @@
   <tbody> 
     <tr>
       <td>Active</td>
-      <td><a href="/beneficiary/detail/">SC000001</a></td>
+      <td><a href="/scc/beneficiary/detail/">SC000001</a></td>
       <td>S1111111C</td>
       <td>Abdur SCC Beneficiary</td>
       <td>Blk 15 Some Address #02-007</td>
@@ -286,7 +287,7 @@
     </tr> 
     <tr>
       <td>Active</td>
-      <td><a href="/beneficiary/detail/">SC000002</a></td>
+      <td><a href="/scc/beneficiary/detail/">SC000002</a></td>
       <td>S2222222F</td>
       <td>Abul SCC Beneficiary</td>
       <td>Blk 16 Some Address #10-007</td>
@@ -298,7 +299,7 @@
     </tr> 
     <tr>
       <td>Active</td>
-      <td><a href="/beneficiary/detail/">SC000003</a></td>
+      <td><a href="/scc/beneficiary/detail/">SC000003</a></td>
       <td>S3333333J</td>
       <td>Agustani SCC Beneficiary </td>
       <td>Blk 52 Some Address #11-007</td>
@@ -310,7 +311,7 @@
     </tr> 
     <tr>
       <td>Active</td>
-      <td><a href="/beneficiary/detail/">SC000004</a></td>
+      <td><a href="/scc/beneficiary/detail/">SC000004</a></td>
       <td>S4444444B</td>
       <td>Ahmadi SCC Beneficiary </td>
       <td>Blk 15 Some Address #12-007</td>
@@ -322,7 +323,7 @@
     </tr> 
     <tr>
       <td>Active</td>
-      <td><a href="/beneficiary/detail/">SC000005</a></td>
+      <td><a href="/scc/beneficiary/detail/">SC000005</a></td>
       <td>S5555555J</td>
       <td>Ahmiina SCC Beneficiary</td>
       <td>Blk 15 Some Address #06-007</td>
@@ -333,6 +334,7 @@
       </td>
     </tr>  </tbody>
 </table>
+
      
         <div class="clearfix"></div>
           <nav>
@@ -517,6 +519,67 @@
        
       </div>
 
+
+<div id="tab_centerhistory" class="tab-pane">
+     <div class="row" style=" margin-bottom: 20px">
+          <div class="col-lg-3">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span> </div>
+            <!-- /input-group -->
+          </div>
+         <div class="col-lg-9">
+            <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
+            <div class="btn-group  pull-right">
+              <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
+            </div>
+          </div>
+        </div>
+      <table class="table table-bordered table-striped table-condensed">
+        <thead>
+          <tr>
+            <th style="width:200px">Date</th>
+            <th style="width:150px">Event Type</th>
+            <th style="width:200px">By</th>
+            <th>Event Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>27/3/2015 10:08:11 PM</td>
+            <td>Upload</td>
+            <td>Carol</td>
+            <td>Upload 100 New Beneficiaries</td>
+          </tr>
+        
+        </tbody>
+      </table>
+      <div class="clearfix"></div>
+    
+       <nav>
+        <div class="pull-left"><span style="font-size:12px">Page 1 of 5 (5 of 100 rows listed)</span></div>
+        <ul class="pagination pagination-sm pull-right" style="margin:0">
+          <li>
+            <a href="#" aria-label="Previous"> <i class="fa fa-fast-backward"></i> </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Previous"> <i class="fa fa-backward"></i> </a>
+          </li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Previous"> <i class="fa fa-forward"></i> </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Previous"> <i class="fa fa-fast-forward"></i> </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     
     </div>
   </div>
