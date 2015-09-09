@@ -23,10 +23,27 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+   <link rel="stylesheet" href="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.css">
    <link rel="stylesheet" href="/scc/assets/css/scheduler.min.css">
    <!-- Customisation  -->
    <link rel="stylesheet" type="text/css" href="/scc/vendor/css/bootstrap-multiselect.css" />
    <link rel="stylesheet" type="text/css" href="/scc/assets/css/scc.css" />
+
+  <!-- build:css({dist,.tmp}) /scc/vendor/css/ext-dashboard-useminmain.css -->
+   <!-- Dynamic Style -->  
+     
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css"/>
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.1.0/css/fixedColumns.bootstrap.min.css"/>
+    
+    
+    <!-- endbuild -->
+    <!-- General Customisation  -->
 
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
@@ -36,6 +53,13 @@
     <meta property="og:description" content="bootstrap portal with navigation">
     <meta property="og:url" content="http://waroengboedaya.github.io/index.html">
     <meta property="og:site_name" content="SCC">
+
+
+
+    
+   
+    
+
 
     <!-- Icons -->
 <!--     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -66,15 +90,16 @@
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul id="headermenu" class="nav navbar-nav" style="">
+           <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
             <li><a href="/scc/beneficiary/">Beneficiaries</a></li>
             <li><a href="/scc/scc/">Collection Centres</a></li>
             <li><a href="/scc/collection/">Distribute</a></li>
-            <li><a href="#">Scan Page</a></li>
-            <li><a href="/scc/staff/">Admin &amp; Staff</a></li>
+          <!--   <li><a href="#">Scan Page</a></li> -->
+            <li><a href="/scc/staff/">Users</a></li>
           </ul>
           <form id="logoutForm" >
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
+             
               <li class="dropdown user-dropdown"> <a href="/Account/Manage" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> systemadmin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/scc/account/"><i class="fa fa-user"></i> Your Account</a></li>
@@ -115,7 +140,8 @@
             </ol>
           </div>
           <h1 class="pull-left">Dashboard</h1>
-          <div class="pull-right hidden-xs" style="margin-top:20px; ">   </div>
+          <div class="pull-right hidden-xs" style="margin-top:20px; ">  
+            <div class="btn-group"><a href="/scc" class="btn btn-primary"><i class="fa fa-download"></i> Export</a> </div>  </div>
         </div>
       </div>
     </div>
@@ -142,9 +168,2813 @@
 </header>
  -->
 <main id="content" class="content" role="main">
+    <div>
+    <h4 class="text-primary" style="margin:0px;"> SCC Weekly Collection Status </h4>
+    <h5 style="margin-bottom:10px; color:#666; font-weight:bold">Total Beneficiary Collecting from Total Registered SCC Beneficiaries</h5>
+    <nav>
+      <div class="pull-left">
+        <div class="btn-group">
+          <button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="None selected">All Centre Types <b class="caret"></b></button>
+          <ul class="multiselect-container dropdown-menu">
+            <li>
+              <a href="javascript:void(0);">
+                <label class="checkbox">
+                  <input type="checkbox" name="multiselect" value="Active" checked> SCC</label>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <label class="checkbox">
+                  <input type="checkbox" name="multiselect" value="Inactive" checked> School</label>
+              </a>
+            </li>
 
+          </ul>
+        </div>
+        <!-- /input-group -->
+      </div>
+      <div class="pull-right">
+        <div class="input-group custom-search-form  pull-right" style=" width:200px; ">
+          <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+                <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> Search </button>
+                </span> </div>
+      </div>
+    </nav>
+    </div>
+
+       <!--  <nav>
+            <div class="pull-left">
+                <div class="input-group custom-search-form  pull-right" style=" width:200px; ">
+                    <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+                <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> Search </button>
+                </span> </div>
+            </div>
+          
+    </div>
+    <div class="pull-right">
+        <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
+    </div>
+    </nav> -->
+    <div class="clearfix"></div>
+
+    <div style="margin-bottom:10px">
+
+   <table id="fixcol-datatable" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%" >
+        <thead>
+            <tr>
+                <th>Name <i class="pull-right fa fa-unsorted"></i> </th>
+                
+                <th>w1</th>
+                
+                <th>w2</th>
+                
+                <th>w3</th>
+                
+                <th>w4</th>
+                
+                <th>w5</th>
+                
+                <th>w6</th>
+                
+                <th>w7</th>
+                
+                <th>w8</th>
+                
+                <th>w9</th>
+                
+                <th>w10</th>
+                
+                <th>w11</th>
+                
+                <th>w12</th>
+                
+                <th>w13</th>
+                
+                <th>w14</th>
+                
+                <th>w15</th>
+                
+                <th>w16</th>
+                
+                <th>w17</th>
+                
+                <th>w18</th>
+                
+                <th>w19</th>
+                
+                <th>w20</th>
+                
+                <th>w21</th>
+                
+                <th>w22</th>
+                
+                <th>w23</th>
+                
+                <th>w24</th>
+                
+                <th>w25</th>
+                
+                <th>w26</th>
+                
+                <th>w27</th>
+                
+                <th>w28</th>
+                
+                <th>w29</th>
+                
+                <th>w30</th>
+                
+                <th>w31</th>
+                
+                <th>w32</th>
+                
+                <th>w33</th>
+                
+                <th>w34</th>
+                
+                <th>w35</th>
+                
+                <th>w36</th>
+                
+                <th>w37</th>
+                
+                <th>w38</th>
+                
+                <th>w39</th>
+                
+                <th>w40</th>
+                
+                <th>w41</th>
+                
+                <th>w42</th>
+                
+                <th>w43</th>
+                
+                <th>w44</th>
+                
+                <th>w45</th>
+                
+                <th>w46</th>
+                
+                <th>w47</th>
+                
+                <th>w48</th>
+                
+                <th>w49</th>
+                
+                <th>w50</th>
+                
+                <th>w51</th>
+                
+                <th>w52</th>
+                
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>Marine Terrace Self Collection Centre</td>
+                
+                <td data-hist="13 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 35</div></td>
+                
+                <td data-hist="29 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 32</div></td>
+                
+                <td data-hist="20 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 42</div></td>
+                
+                <td data-hist="19 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 47</div></td>
+                
+                <td data-hist="27 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 37</div></td>
+                
+                <td data-hist="30 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 33</div></td>
+                
+                <td data-hist="22 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 36</div></td>
+                
+                <td data-hist="25 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 32</div></td>
+                
+                <td data-hist="28 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 32</div></td>
+                
+                <td data-hist="19 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 45</div></td>
+                
+                <td data-hist="10 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 40</div></td>
+                
+                <td data-hist="16 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 40</div></td>
+                
+                <td data-hist="17 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 35</div></td>
+                
+                <td data-hist="12 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 37</div></td>
+                
+                <td data-hist="10 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 47</div></td>
+                
+                <td data-hist="17 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 32</div></td>
+                
+                <td data-hist="29 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 35</div></td>
+                
+                <td data-hist="25 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 38</div></td>
+                
+                <td data-hist="16 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 50</div></td>
+                
+                <td data-hist="26 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 31</div></td>
+                
+                <td data-hist="22 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 41</div></td>
+                
+                <td data-hist="15 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 38</div></td>
+                
+                <td data-hist="14 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 46</div></td>
+                
+                <td data-hist="27 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 32</div></td>
+                
+                <td data-hist="23 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 32</div></td>
+                
+                <td data-hist="12 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 35</div></td>
+                
+                <td data-hist="27 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 36</div></td>
+                
+                <td data-hist="21 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 34</div></td>
+                
+                <td data-hist="27 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 41</div></td>
+                
+                <td data-hist="27 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 38</div></td>
+                
+                <td data-hist="15 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 44</div></td>
+                
+                <td data-hist="26 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 49</div></td>
+                
+                <td data-hist="18 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 43</div></td>
+                
+                <td data-hist="14 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 32</div></td>
+                
+                <td data-hist="12 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 37</div></td>
+                
+                <td data-hist="25 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 40</div></td>
+                
+                <td data-hist="15 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 39</div></td>
+                
+                <td data-hist="21 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 42</div></td>
+                
+                <td data-hist="12 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 38</div></td>
+                
+                <td data-hist="29 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 40</div></td>
+                
+                <td data-hist="25 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 38</div></td>
+                
+                <td data-hist="14 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 43</div></td>
+                
+                <td data-hist="21 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 39</div></td>
+                
+                <td data-hist="15 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 48</div></td>
+                
+                <td data-hist="22 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 50</div></td>
+                
+                <td data-hist="19 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 39</div></td>
+                
+                <td data-hist="23 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 44</div></td>
+                
+                <td data-hist="17 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 50</div></td>
+                
+                <td data-hist="14 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 36</div></td>
+                
+                <td data-hist="11 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 35</div></td>
+                
+                <td data-hist="10 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 35</div></td>
+                
+                <td data-hist="28 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 47</div></td>
+                
+            </tr> 
+            <tr>
+                <td>Choa Chu Kang FeiYue FSC Self Collection Centre</td>
+                
+                <td data-hist="15 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 41</div></td>
+                
+                <td data-hist="22 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 38</div></td>
+                
+                <td data-hist="28 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 39</div></td>
+                
+                <td data-hist="16 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 34</div></td>
+                
+                <td data-hist="14 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 32</div></td>
+                
+                <td data-hist="29 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 48</div></td>
+                
+                <td data-hist="14 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 32</div></td>
+                
+                <td data-hist="13 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 40</div></td>
+                
+                <td data-hist="15 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 44</div></td>
+                
+                <td data-hist="29 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 42</div></td>
+                
+                <td data-hist="12 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 37</div></td>
+                
+                <td data-hist="19 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 39</div></td>
+                
+                <td data-hist="30 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 47</div></td>
+                
+                <td data-hist="27 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 32</div></td>
+                
+                <td data-hist="23 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 48</div></td>
+                
+                <td data-hist="22 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 32</div></td>
+                
+                <td data-hist="21 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 50</div></td>
+                
+                <td data-hist="30 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 39</div></td>
+                
+                <td data-hist="27 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 50</div></td>
+                
+                <td data-hist="19 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 32</div></td>
+                
+                <td data-hist="26 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 34</div></td>
+                
+                <td data-hist="16 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 47</div></td>
+                
+                <td data-hist="22 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 50</div></td>
+                
+                <td data-hist="26 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 34</div></td>
+                
+                <td data-hist="23 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 46</div></td>
+                
+                <td data-hist="26 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 43</div></td>
+                
+                <td data-hist="11 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 48</div></td>
+                
+                <td data-hist="29 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 35</div></td>
+                
+                <td data-hist="18 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 34</div></td>
+                
+                <td data-hist="28 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 36</div></td>
+                
+                <td data-hist="28 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 37</div></td>
+                
+                <td data-hist="21 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 37</div></td>
+                
+                <td data-hist="29 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 34</div></td>
+                
+                <td data-hist="28 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 48</div></td>
+                
+                <td data-hist="20 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 31</div></td>
+                
+                <td data-hist="11 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 31</div></td>
+                
+                <td data-hist="19 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 37</div></td>
+                
+                <td data-hist="15 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 44</div></td>
+                
+                <td data-hist="28 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 42</div></td>
+                
+                <td data-hist="15 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 42</div></td>
+                
+                <td data-hist="12 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 37</div></td>
+                
+                <td data-hist="17 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 42</div></td>
+                
+                <td data-hist="24 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 34</div></td>
+                
+                <td data-hist="18 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 48</div></td>
+                
+                <td data-hist="19 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 50</div></td>
+                
+                <td data-hist="13 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 36</div></td>
+                
+                <td data-hist="20 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 32</div></td>
+                
+                <td data-hist="24 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 31</div></td>
+                
+                <td data-hist="12 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 32</div></td>
+                
+                <td data-hist="25 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 31</div></td>
+                
+                <td data-hist="18 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 34</div></td>
+                
+                <td data-hist="23 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 46</div></td>
+                
+            </tr> 
+            <tr>
+                <td>Jalan Kayu Self Collection Centre</td>
+                
+                <td data-hist="19 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 41</div></td>
+                
+                <td data-hist="13 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 34</div></td>
+                
+                <td data-hist="18 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 50</div></td>
+                
+                <td data-hist="25 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 50</div></td>
+                
+                <td data-hist="29 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 48</div></td>
+                
+                <td data-hist="13 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 46</div></td>
+                
+                <td data-hist="20 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 35</div></td>
+                
+                <td data-hist="19 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 33</div></td>
+                
+                <td data-hist="24 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 49</div></td>
+                
+                <td data-hist="20 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 48</div></td>
+                
+                <td data-hist="14 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 48</div></td>
+                
+                <td data-hist="18 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 32</div></td>
+                
+                <td data-hist="14 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 38</div></td>
+                
+                <td data-hist="16 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 45</div></td>
+                
+                <td data-hist="10 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 32</div></td>
+                
+                <td data-hist="22 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 43</div></td>
+                
+                <td data-hist="29 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 35</div></td>
+                
+                <td data-hist="16 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 49</div></td>
+                
+                <td data-hist="26 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 33</div></td>
+                
+                <td data-hist="29 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 40</div></td>
+                
+                <td data-hist="13 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 45</div></td>
+                
+                <td data-hist="14 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 32</div></td>
+                
+                <td data-hist="10 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 36</div></td>
+                
+                <td data-hist="15 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 36</div></td>
+                
+                <td data-hist="22 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 31</div></td>
+                
+                <td data-hist="20 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 49</div></td>
+                
+                <td data-hist="14 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 34</div></td>
+                
+                <td data-hist="30 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 45</div></td>
+                
+                <td data-hist="30 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 31</div></td>
+                
+                <td data-hist="15 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 36</div></td>
+                
+                <td data-hist="19 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 47</div></td>
+                
+                <td data-hist="11 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 46</div></td>
+                
+                <td data-hist="17 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 40</div></td>
+                
+                <td data-hist="24 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 50</div></td>
+                
+                <td data-hist="11 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 40</div></td>
+                
+                <td data-hist="22 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 40</div></td>
+                
+                <td data-hist="16 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 37</div></td>
+                
+                <td data-hist="30 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 39</div></td>
+                
+                <td data-hist="12 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 42</div></td>
+                
+                <td data-hist="10 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 47</div></td>
+                
+                <td data-hist="19 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 38</div></td>
+                
+                <td data-hist="22 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 38</div></td>
+                
+                <td data-hist="28 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 50</div></td>
+                
+                <td data-hist="14 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 49</div></td>
+                
+                <td data-hist="28 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 42</div></td>
+                
+                <td data-hist="24 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 46</div></td>
+                
+                <td data-hist="13 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 41</div></td>
+                
+                <td data-hist="24 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 43</div></td>
+                
+                <td data-hist="17 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 40</div></td>
+                
+                <td data-hist="23 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 42</div></td>
+                
+                <td data-hist="13 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 42</div></td>
+                
+                <td data-hist="10 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 31</div></td>
+                
+            </tr> 
+            <tr>
+                <td>Queenstown Primary School</td>
+                
+                <td data-hist="20 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 43</div></td>
+                
+                <td data-hist="27 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 33</div></td>
+                
+                <td data-hist="17 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 46</div></td>
+                
+                <td data-hist="16 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 44</div></td>
+                
+                <td data-hist="20 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 38</div></td>
+                
+                <td data-hist="30 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 43</div></td>
+                
+                <td data-hist="15 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 31</div></td>
+                
+                <td data-hist="23 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 46</div></td>
+                
+                <td data-hist="28 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 47</div></td>
+                
+                <td data-hist="25 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 44</div></td>
+                
+                <td data-hist="27 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 42</div></td>
+                
+                <td data-hist="29 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 41</div></td>
+                
+                <td data-hist="10 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 35</div></td>
+                
+                <td data-hist="30 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 42</div></td>
+                
+                <td data-hist="19 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 49</div></td>
+                
+                <td data-hist="30 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 48</div></td>
+                
+                <td data-hist="13 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 42</div></td>
+                
+                <td data-hist="23 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 40</div></td>
+                
+                <td data-hist="20 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 45</div></td>
+                
+                <td data-hist="16 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 32</div></td>
+                
+                <td data-hist="24 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 50</div></td>
+                
+                <td data-hist="24 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 39</div></td>
+                
+                <td data-hist="21 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 34</div></td>
+                
+                <td data-hist="21 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 40</div></td>
+                
+                <td data-hist="16 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 38</div></td>
+                
+                <td data-hist="23 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 34</div></td>
+                
+                <td data-hist="12 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 41</div></td>
+                
+                <td data-hist="12 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 50</div></td>
+                
+                <td data-hist="19 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 33</div></td>
+                
+                <td data-hist="24 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 39</div></td>
+                
+                <td data-hist="19 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 34</div></td>
+                
+                <td data-hist="18 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 34</div></td>
+                
+                <td data-hist="15 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 50</div></td>
+                
+                <td data-hist="22 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 42</div></td>
+                
+                <td data-hist="18 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 33</div></td>
+                
+                <td data-hist="21 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 43</div></td>
+                
+                <td data-hist="24 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 42</div></td>
+                
+                <td data-hist="19 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 31</div></td>
+                
+                <td data-hist="19 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 36</div></td>
+                
+                <td data-hist="22 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 50</div></td>
+                
+                <td data-hist="10 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 37</div></td>
+                
+                <td data-hist="10 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 45</div></td>
+                
+                <td data-hist="21 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 40</div></td>
+                
+                <td data-hist="28 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 37</div></td>
+                
+                <td data-hist="28 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 50</div></td>
+                
+                <td data-hist="16 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 31</div></td>
+                
+                <td data-hist="17 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 33</div></td>
+                
+                <td data-hist="24 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 39</div></td>
+                
+                <td data-hist="23 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 43</div></td>
+                
+                <td data-hist="28 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 45</div></td>
+                
+                <td data-hist="26 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 44</div></td>
+                
+                <td data-hist="12 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 47</div></td>
+                
+            </tr> 
+            <tr>
+                <td>Toa Payoh Care Corner FSC Self Collection Centre</td>
+                
+                <td data-hist="23 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 46</div></td>
+                
+                <td data-hist="30 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 45</div></td>
+                
+                <td data-hist="24 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 43</div></td>
+                
+                <td data-hist="24 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 31</div></td>
+                
+                <td data-hist="26 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 44</div></td>
+                
+                <td data-hist="30 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 46</div></td>
+                
+                <td data-hist="16 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 42</div></td>
+                
+                <td data-hist="30 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 50</div></td>
+                
+                <td data-hist="29 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 40</div></td>
+                
+                <td data-hist="12 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 31</div></td>
+                
+                <td data-hist="16 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 35</div></td>
+                
+                <td data-hist="30 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 35</div></td>
+                
+                <td data-hist="25 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 46</div></td>
+                
+                <td data-hist="27 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">27 of 37</div></td>
+                
+                <td data-hist="29 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 32</div></td>
+                
+                <td data-hist="17 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 48</div></td>
+                
+                <td data-hist="28 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 32</div></td>
+                
+                <td data-hist="29 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 31</div></td>
+                
+                <td data-hist="20 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 31</div></td>
+                
+                <td data-hist="17 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 44</div></td>
+                
+                <td data-hist="26 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 50</div></td>
+                
+                <td data-hist="17 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 46</div></td>
+                
+                <td data-hist="17 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 32</div></td>
+                
+                <td data-hist="22 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 44</div></td>
+                
+                <td data-hist="20 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 48</div></td>
+                
+                <td data-hist="13 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 43</div></td>
+                
+                <td data-hist="21 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 38</div></td>
+                
+                <td data-hist="17 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 43</div></td>
+                
+                <td data-hist="21 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 31</div></td>
+                
+                <td data-hist="17 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 41</div></td>
+                
+                <td data-hist="15 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 31</div></td>
+                
+                <td data-hist="17 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 48</div></td>
+                
+                <td data-hist="12 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 40</div></td>
+                
+                <td data-hist="23 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 49</div></td>
+                
+                <td data-hist="30 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 37</div></td>
+                
+                <td data-hist="23 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 38</div></td>
+                
+                <td data-hist="21 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 40</div></td>
+                
+                <td data-hist="19 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 44</div></td>
+                
+                <td data-hist="13 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 46</div></td>
+                
+                <td data-hist="13 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 49</div></td>
+                
+                <td data-hist="28 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 45</div></td>
+                
+                <td data-hist="24 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 39</div></td>
+                
+                <td data-hist="10 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 34</div></td>
+                
+                <td data-hist="25 of 49" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 49</div></td>
+                
+                <td data-hist="28 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 37</div></td>
+                
+                <td data-hist="19 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 35</div></td>
+                
+                <td data-hist="11 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">11 of 32</div></td>
+                
+                <td data-hist="22 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 41</div></td>
+                
+                <td data-hist="19 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 39</div></td>
+                
+                <td data-hist="10 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 40</div></td>
+                
+                <td data-hist="23 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 46</div></td>
+                
+                <td data-hist="20 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 38</div></td>
+                
+            </tr> 
+            <tr>
+                <td>Woodlands Blk 852 Self Collection Centre</td>
+                
+                <td data-hist="15 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 39</div></td>
+                
+                <td data-hist="15 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 43</div></td>
+                
+                <td data-hist="30 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">30 of 37</div></td>
+                
+                <td data-hist="24 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 43</div></td>
+                
+                <td data-hist="25 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">25 of 40</div></td>
+                
+                <td data-hist="15 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">15 of 38</div></td>
+                
+                <td data-hist="10 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 45</div></td>
+                
+                <td data-hist="17 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 36</div></td>
+                
+                <td data-hist="16 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 40</div></td>
+                
+                <td data-hist="28 of 39" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 39</div></td>
+                
+                <td data-hist="29 of 44" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 44</div></td>
+                
+                <td data-hist="18 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 43</div></td>
+                
+                <td data-hist="24 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 37</div></td>
+                
+                <td data-hist="23 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 42</div></td>
+                
+                <td data-hist="10 of 41" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 41</div></td>
+                
+                <td data-hist="17 of 50" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 50</div></td>
+                
+                <td data-hist="28 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 31</div></td>
+                
+                <td data-hist="13 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 46</div></td>
+                
+                <td data-hist="28 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 35</div></td>
+                
+                <td data-hist="12 of 34" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 34</div></td>
+                
+                <td data-hist="20 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 42</div></td>
+                
+                <td data-hist="29 of 45" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 45</div></td>
+                
+                <td data-hist="19 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 40</div></td>
+                
+                <td data-hist="16 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 37</div></td>
+                
+                <td data-hist="14 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 32</div></td>
+                
+                <td data-hist="18 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">18 of 35</div></td>
+                
+                <td data-hist="19 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 48</div></td>
+                
+                <td data-hist="22 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">22 of 47</div></td>
+                
+                <td data-hist="16 of 47" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 47</div></td>
+                
+                <td data-hist="20 of 42" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">20 of 42</div></td>
+                
+                <td data-hist="29 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 46</div></td>
+                
+                <td data-hist="29 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">29 of 37</div></td>
+                
+                <td data-hist="26 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">26 of 37</div></td>
+                
+                <td data-hist="13 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 36</div></td>
+                
+                <td data-hist="16 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 43</div></td>
+                
+                <td data-hist="14 of 46" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">14 of 46</div></td>
+                
+                <td data-hist="24 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 36</div></td>
+                
+                <td data-hist="16 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 40</div></td>
+                
+                <td data-hist="21 of 43" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 43</div></td>
+                
+                <td data-hist="16 of 33" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 33</div></td>
+                
+                <td data-hist="23 of 37" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">23 of 37</div></td>
+                
+                <td data-hist="19 of 48" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 48</div></td>
+                
+                <td data-hist="28 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">28 of 35</div></td>
+                
+                <td data-hist="13 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">13 of 31</div></td>
+                
+                <td data-hist="17 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">17 of 38</div></td>
+                
+                <td data-hist="12 of 32" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">12 of 32</div></td>
+                
+                <td data-hist="16 of 35" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 35</div></td>
+                
+                <td data-hist="10 of 31" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">10 of 31</div></td>
+                
+                <td data-hist="19 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">19 of 40</div></td>
+                
+                <td data-hist="16 of 38" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">16 of 38</div></td>
+                
+                <td data-hist="21 of 40" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">21 of 40</div></td>
+                
+                <td data-hist="24 of 36" class="heat" style="text-align:center">
+                
+
+                    <strong>4%</strong>
+
+
+                    <div style="font-size:11px">24 of 36</div></td>
+                
+            </tr>  </tbody>
+    </table>
+      
+    </div>
 </main>
- </div>
+
+
+<!-- 
+
+  <table id="list-table" class="table table-striped table-bordered table-hover table-condensed " style="margin-top:20px" data-toggle="table" data-fixed-columns="true" data-fixed-number="1">
+            <thead>
+                <tr>
+                    <th style="width:180px">SCC <i class="pull-right fa fa-unsorted"></i> </th>
+                    <th>w1 <i class="pull-right fa fa-unsorted1"></i></th>
+                    <th>w2 <i class="pull-right fa fa-unsorted1"></i></th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td>Marine Terrace Self Collection Centre</td>
+                    <td>13 of 35</td>
+                    <td>29 of 32</td>
+                </tr> 
+                <tr>
+                    <td>Choa Chu Kang FeiYue FSC Self Collection Centre</td>
+                    <td>15 of 41</td>
+                    <td>22 of 38</td>
+                </tr> 
+                <tr>
+                    <td>Jalan Kayu Self Collection Centre</td>
+                    <td>19 of 41</td>
+                    <td>13 of 34</td>
+                </tr> 
+                <tr>
+                    <td>Queenstown Primary School</td>
+                    <td>20 of 43</td>
+                    <td>27 of 33</td>
+                </tr> 
+                <tr>
+                    <td>Toa Payoh Care Corner FSC Self Collection Centre</td>
+                    <td>23 of 46</td>
+                    <td>30 of 45</td>
+                </tr> 
+                <tr>
+                    <td>Woodlands Blk 852 Self Collection Centre</td>
+                    <td>15 of 39</td>
+                    <td>15 of 43</td>
+                </tr>  </tbody>
+        </table>
+<style>
+    	#bs-table {
+    table-layout: fixed;
+}
+
+#bs-table th {
+    width: 150px;
+}
+
+#bs-table .description {
+    width: 500px;
+}
+</style>
+        
+
+
+<table data-toggle="table" data-url="/assets/dashboard.json" data-fixed-columns="true" data-fixed-number="1" >
+            <thead>
+                <tr>
+                    <th data-field="SCC" class="description">Name</th>
+                    <th data-field="w1">1</th>
+                    <th data-field="w2">2</th>
+                    <th data-field="w3">3</th>
+                    <th data-field="w4">4</th>
+                    <th data-field="w5">5</th>
+                    <th data-field="w6">6</th>
+                    <th data-field="w7">7</th>
+                    <th data-field="w8">8</th>
+                    <th data-field="w9">9</th>
+                    <th data-field="w10">10</th>
+                    <th data-field="w11">11</th>
+                    <th data-field="w12">12</th>
+                    <th data-field="w13">13</th>
+                    <th data-field="w14">14</th>
+                    <th data-field="w15">15</th>
+                    <th data-field="w16">16</th>
+                    <th data-field="w17">17</th>
+                    <th data-field="w18">18</th>
+                    <th data-field="w19">19</th>
+                    <th data-field="w20">20</th>
+                    <th data-field="w21">21</th>
+                    <th data-field="w22">22</th>
+                    <th data-field="w23">23</th>
+                    <th data-field="w24">24</th>
+                    <th data-field="w25">25</th>
+                    <th data-field="w26">26</th>
+                    <th data-field="w27">27</th>
+                    <th data-field="w28">28</th>
+                    <th data-field="w29">29</th>
+                    <th data-field="w30">30</th>
+                    <th data-field="w31">31</th>
+                    <th data-field="w32">32</th>
+                    <th data-field="w33">33</th>
+                    <th data-field="w34">34</th>
+                    <th data-field="w35">35</th>
+                    <th data-field="w36">36</th>
+                    <th data-field="w37">37</th>
+                    <th data-field="w38">38</th>
+                    <th data-field="w39">39</th>
+                    <th data-field="w40">40</th>
+                    <th data-field="w41">41</th>
+                    <th data-field="w42">42</th>
+                    <th data-field="w43">43</th>
+                    <th data-field="w44">44</th>
+                    <th data-field="w45">45</th>
+                    <th data-field="w46">46</th>
+                    <th data-field="w47">47</th>
+                    <th data-field="w48">48</th>
+                    <th data-field="w49">49</th>
+                    <th data-field="w50">50</th>
+                    <th data-field="w51">51</th>
+                    <th data-field="w52">52</th>
+                 
+                </tr>
+            </thead>
+        </table> --> </div>
     </div><!-- /.row -->
   </div><!-- /.container -->
 </section>
@@ -172,12 +3002,46 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+    
+    <script src="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.js"></script>
     <script src="/scc/assets/js/scheduler.min.js"></script>
     <script src="/scc/vendor/js/jquery.fitvids.js"></script>
     <script src="/scc/vendor/js/bootstrap-multiselect.js"></script>
 
+
+    <!-- Dynamic Script -->  
+     
+    
+    
+    <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    
+    
+    
+    <script src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+    
+    
+    
+    <script src="https://cdn.datatables.net/fixedcolumns/3.1.0/js/dataTables.fixedColumns.min.js"></script>
+    
+    
+    
+    <script src="https://rawgithub.com/DLarsen/jquery-hottie/master/jquery.hottie.js"></script>
+    
+    
+
+     <!-- Dynamic Import-->  
+     
+    
+
+
      <!-- Custom JS -->
     <script type="text/javascript" src="/scc/assets/js/scc.js"></script>
+
+
+  
+
 
     <!-- Google Analytics Tracking code -->
     <!-- <script type="text/javascript">

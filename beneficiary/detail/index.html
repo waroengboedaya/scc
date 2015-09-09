@@ -23,10 +23,19 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+   <link rel="stylesheet" href="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.css">
    <link rel="stylesheet" href="/scc/assets/css/scheduler.min.css">
    <!-- Customisation  -->
    <link rel="stylesheet" type="text/css" href="/scc/vendor/css/bootstrap-multiselect.css" />
    <link rel="stylesheet" type="text/css" href="/scc/assets/css/scc.css" />
+
+  <!-- build:css({dist,.tmp}) /scc/vendor/css/ext-abdur-scc-beneficiary-useminmain.css -->
+   <!-- Dynamic Style -->  
+     
+    
+    <!-- endbuild -->
+    <!-- General Customisation  -->
 
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
@@ -36,6 +45,13 @@
     <meta property="og:description" content="bootstrap portal with navigation">
     <meta property="og:url" content="http://waroengboedaya.github.io/beneficiary/detail/">
     <meta property="og:site_name" content="SCC">
+
+
+
+    
+   
+    
+
 
     <!-- Icons -->
 <!--     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -66,15 +82,16 @@
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul id="headermenu" class="nav navbar-nav" style="">
+           <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
             <li><a href="/scc/beneficiary/">Beneficiaries</a></li>
             <li><a href="/scc/scc/">Collection Centres</a></li>
             <li><a href="/scc/collection/">Distribute</a></li>
-            <li><a href="#">Scan Page</a></li>
-            <li><a href="/scc/staff/">Admin &amp; Staff</a></li>
+          <!--   <li><a href="#">Scan Page</a></li> -->
+            <li><a href="/scc/staff/">Users</a></li>
           </ul>
           <form id="logoutForm" >
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
+             
               <li class="dropdown user-dropdown"> <a href="/Account/Manage" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> systemadmin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/scc/account/"><i class="fa fa-user"></i> Your Account</a></li>
@@ -133,39 +150,43 @@
         
             <tbody>
               <tr>  
-                <th style="width:140px">Status</th>
+                <th style="width:200px">Status</th>
                 <td>Active</td>
               </tr>  
          <tr>
-                <th style="width:140px">Ref. Code</th>
+                <th style="width:200px">Ref. Code</th>
                 <td>SC000001</td>
               </tr>
               <tr>
-                <th style="width:140px">Gender</th>
+                <th style="width:200px">Gender</th>
                     <td>Male</td>
               </tr>
               <tr>
-                <th style="width:140px">Race</th>
+                <th style="width:200px">Race</th>
                 <td>Malay</td>
               </tr>
               <tr>
-                <th style="width:140px"><!--Contact Number--> Contact Number</th>
+                <th style="width:200px"><!--Contact Number--> Contact Number</th>
                 <td></td>
               </tr>
               <tr>
-                <th style="width:140px">No of Family Member</th>
+                <th style="width:200px">No of Family Member</th>
                 <td>2</td>
               </tr>
+               <tr>
+                <th style="width:200px">Goodie Bag Size</th>
+                <td>Medium</td>
+              </tr>
         <tr>
-                <th style="width:140px">Household Income</th>
+                <th style="width:200px">Household Income</th>
                 <td>450</td>
               </tr>
               <tr>
-                <th style="width:140px">Assigned SCC</th>
+                <th style="width:200px">Assigned SCC</th>
                 <td>SCC1 - Marine Terrace Self Collection Centre</td>
               </tr>
               <tr>
-                <th style="width:140px">Registration Time</th>
+                <th style="width:200px">Member Since</th>
                 <td>13/3/2015 3:39:24 PM</td>
               </tr>
             </tbody>
@@ -201,14 +222,14 @@
   <div class="tab-content col-md-12">
     <div id="tab_profile" class="tab-pane">
      <div class="row" style=" margin-bottom: 20px">
-          <div class="col-lg-3">
+          <div class="col-md-3">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
         <button class="btn btn-default" type="button">Search</button>
       </span> </div>
             <!-- /input-group -->
           </div>
-         <div class="col-lg-9">
+         <div class="col-md-9">
             <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
             <div class="btn-group  pull-right">
               <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
@@ -292,14 +313,14 @@
     </div>
     <div id="tab_collections" class="tab-pane active">
      <div class="row" style=" margin-bottom: 20px">
-          <div class="col-lg-3">
+          <div class="col-md-3">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
         <button class="btn btn-default" type="button">Search</button>
       </span> </div>
             <!-- /input-group -->
           </div>
-         <div class="col-lg-9">
+         <div class="col-md-9">
             <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
             <div class="btn-group  pull-right">
               <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
@@ -449,12 +470,30 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+    
+    <script src="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.js"></script>
     <script src="/scc/assets/js/scheduler.min.js"></script>
     <script src="/scc/vendor/js/jquery.fitvids.js"></script>
     <script src="/scc/vendor/js/bootstrap-multiselect.js"></script>
 
+
+    <!-- Dynamic Script -->  
+     
+    
+
+     <!-- Dynamic Import-->  
+     
+    
+
+
      <!-- Custom JS -->
     <script type="text/javascript" src="/scc/assets/js/scc.js"></script>
+
+
+  
+
 
     <!-- Google Analytics Tracking code -->
     <!-- <script type="text/javascript">

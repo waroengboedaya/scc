@@ -23,10 +23,19 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+   <link rel="stylesheet" href="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.css">
    <link rel="stylesheet" href="/scc/assets/css/scheduler.min.css">
    <!-- Customisation  -->
    <link rel="stylesheet" type="text/css" href="/scc/vendor/css/bootstrap-multiselect.css" />
    <link rel="stylesheet" type="text/css" href="/scc/assets/css/scc.css" />
+
+  <!-- build:css({dist,.tmp}) /scc/vendor/css/ext-new-beneficiary-useminmain.css -->
+   <!-- Dynamic Style -->  
+     
+    
+    <!-- endbuild -->
+    <!-- General Customisation  -->
 
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
@@ -36,6 +45,13 @@
     <meta property="og:description" content="bootstrap portal with navigation">
     <meta property="og:url" content="http://waroengboedaya.github.io/beneficiary/new/">
     <meta property="og:site_name" content="SCC">
+
+
+
+    
+   
+    
+
 
     <!-- Icons -->
 <!--     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -66,15 +82,16 @@
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul id="headermenu" class="nav navbar-nav" style="">
+           <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
             <li><a href="/scc/beneficiary/">Beneficiaries</a></li>
             <li><a href="/scc/scc/">Collection Centres</a></li>
             <li><a href="/scc/collection/">Distribute</a></li>
-            <li><a href="#">Scan Page</a></li>
-            <li><a href="/scc/staff/">Admin &amp; Staff</a></li>
+          <!--   <li><a href="#">Scan Page</a></li> -->
+            <li><a href="/scc/staff/">Users</a></li>
           </ul>
           <form id="logoutForm" >
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
+             
               <li class="dropdown user-dropdown"> <a href="/Account/Manage" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> systemadmin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/scc/account/"><i class="fa fa-user"></i> Your Account</a></li>
@@ -301,12 +318,30 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+    
+    <script src="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.js"></script>
     <script src="/scc/assets/js/scheduler.min.js"></script>
     <script src="/scc/vendor/js/jquery.fitvids.js"></script>
     <script src="/scc/vendor/js/bootstrap-multiselect.js"></script>
 
+
+    <!-- Dynamic Script -->  
+     
+    
+
+     <!-- Dynamic Import-->  
+     
+    
+
+
      <!-- Custom JS -->
     <script type="text/javascript" src="/scc/assets/js/scc.js"></script>
+
+
+  
+
 
     <!-- Google Analytics Tracking code -->
     <!-- <script type="text/javascript">

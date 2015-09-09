@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Jalan Kayu SCC &#8211; SCC : SCC</title>
+    <title>[CENTRE] Jalan Kayu SCC &#8211; SCC : SCC</title>
     <meta name="description" content="SCC"/>
     <meta name="author" content="Albert Hardy">
     
@@ -23,19 +23,35 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+   <link rel="stylesheet" href="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.css">
    <link rel="stylesheet" href="/scc/assets/css/scheduler.min.css">
    <!-- Customisation  -->
    <link rel="stylesheet" type="text/css" href="/scc/vendor/css/bootstrap-multiselect.css" />
    <link rel="stylesheet" type="text/css" href="/scc/assets/css/scc.css" />
 
+  <!-- build:css({dist,.tmp}) /scc/vendor/css/ext-centre-jalan-kayu-scc-useminmain.css -->
+   <!-- Dynamic Style -->  
+     
+    
+    <!-- endbuild -->
+    <!-- General Customisation  -->
+
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Jalan Kayu SCC">
+    <meta property="og:title" content="[CENTRE] Jalan Kayu SCC">
     <meta property="og:description" content="bootstrap portal with navigation">
     <meta property="og:url" content="http://waroengboedaya.github.io/scc/detail/">
     <meta property="og:site_name" content="SCC">
+
+
+
+    
+   
+    
+
 
     <!-- Icons -->
 <!--     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -66,15 +82,16 @@
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul id="headermenu" class="nav navbar-nav" style="">
+           <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
             <li><a href="/scc/beneficiary/">Beneficiaries</a></li>
             <li><a href="/scc/scc/">Collection Centres</a></li>
             <li><a href="/scc/collection/">Distribute</a></li>
-            <li><a href="#">Scan Page</a></li>
-            <li><a href="/scc/staff/">Admin &amp; Staff</a></li>
+          <!--   <li><a href="#">Scan Page</a></li> -->
+            <li><a href="/scc/staff/">Users</a></li>
           </ul>
           <form id="logoutForm" >
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
+             
               <li class="dropdown user-dropdown"> <a href="/Account/Manage" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> systemadmin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/scc/account/"><i class="fa fa-user"></i> Your Account</a></li>
@@ -111,10 +128,10 @@
             <ol class="breadcrumb">
               <li><a href="/scc">Home</a></li>  
               <!--  <li><a href="/Beneficiary/Index">Home</a></li> -->
-              <li class="active">Jalan Kayu SCC</li>
+              <li class="active">[CENTRE] Jalan Kayu SCC</li>
             </ol>
           </div>
-          <h1 class="pull-left">Jalan Kayu SCC</h1>
+          <h1 class="pull-left">[CENTRE] Jalan Kayu SCC</h1>
           <div class="pull-right hidden-xs" style="margin-top:20px; ">   </div>
         </div>
       </div>
@@ -122,148 +139,151 @@
     
     <div class="row" style="margin-bottom:20px;">
       <div class="col-md-12"> <main id="content" class="content" role="main">
-  <div class="row" style="margin-top:10px; ">
-    <div class="col-md-9">
-      <h4 class="text-primary" style="margin-top:0px">SCC Details</h4>
-      <table class="table table-condensed">
-        <tbody>
-          <tr>
-            <th style="width:30%">Status</th>
-            <td>Active</td>
-          </tr>
-          <tr>
-            <th style="width:30%">
-              <!--SccId-->SCC Code</th>
-            <td>SCC1</td>
-          </tr>
-          <tr>
-            <th style="width:30%">Address</th>
-            <td>Block 54 Marine Terrace, Marine Terrace RC Singapore 440054 </td>
-          </tr>
-          <tr>
-            <th style="width:30%">Contact IC</th>
-            <td>Madam Cheam / Clara</td>
-          </tr>
-          <tr>
-            <th style="width:30%">Contact Number</th>
-            <td>96541656 / 98296496 </td>
-          </tr>
-          <tr>
-            <th style="width:30%">Number of Families Allocated</th>
-            <td>126</td>
-          </tr>
-          <tr>
-            <th style="width:30%">Distribution Day</th>
-            <td>Friday</td>
-          </tr>
-          <tr>
-            <th style="width:30%">
-              <!--Contact Number-->Description</th>
-            <td>Marine Terrace Self Collection Centre Distribution Time: 7-8pm</td>
-          </tr>
-          <tr>
-            <th style="width:30%">Beneficiary Status</th>
-            <td>New (Pending): 10
-              <br/>Active: 100
-              <br/>Flagged: 1
-              <br/>Deactivated: 5</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row" style="margin-top:10px; ">
+        <div class="col-md-9">
+            <h4 class="text-primary" style="margin-top:0px">SCC Details</h4>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <th style="width:30%">Status</th>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">
+                            <!--SccId-->SCC Code</th>
+                        <td>SCC1</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">Address</th>
+                        <td>Block 54 Marine Terrace, Marine Terrace RC Singapore 440054 </td>
+                    </tr>
+                   
+                    <tr>
+                        <th style="width:30%">Contact IC</th>
+                        <td>Madam Cheam / Clara</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">Contact Number</th>
+                        <td>96541656 / 98296496 </td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">Number of Families Allocated</th>
+                        <td>126</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">Distribution Day</th>
+                        <td>Friday</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">
+                            <!--Contact Number-->Description</th>
+                        <td>Marine Terrace Self Collection Centre Distribution Time: 7-8pm</td>
+                    </tr>
+                      <tr>
+                        <th style="width:30%">Goodie Bag Size</th>
+                        <td>Small: 6<br/> Medium:60<br/> Large:60</td>
+                    </tr>
+                    <tr>
+                        <th style="width:30%">Beneficiary Status</th>
+                        <td>New (Pending): 10
+                            <br/>Active: 100
+                            <br/>Flagged: 1
+                            <br/>Deactivated: 5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <!--<a href="scc-addoperator.html" class="btn btn-info btn-lg btn-block" style="margin-bottom:20px">Add Operator</a>--><a href="/scc/beneficiary/new/" class="btn btn-primary btn-block" style="margin-bottom:5px"><i class="fa fa-plus"></i> Add Beneficiary</a> <a href="/scc/scc/detail/edit" class="btn btn-primary btn-block" style="margin-bottom:5px">Edit Center Details</a> <a href="#" class="btn btn-warning btn-sm btn-block" style="margin-bottom:5px" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top">Deactivate Center</a>
+            <hr/> Other Functions:
+            <br/> <a href="#" class=""> Upload Beneficiary List</a>
+            <br/> <a href="/scc/message/new/" class=""> Send Message</a>
+            <br/>
+            <a href="/scc/scc">&larr; Back to SCC List</a>
+            <br/> </div>
     </div>
-    <div class="col-md-3">
-      <!--<a href="scc-addoperator.html" class="btn btn-info btn-lg btn-block" style="margin-bottom:20px">Add Operator</a>--><a href="/scc/beneficiary/new/" class="btn btn-primary btn-block" style="margin-bottom:5px"><i class="fa fa-plus"></i> Add Beneficiary</a> <a href="/scc/scc/detail/edit" class="btn btn-primary btn-block" style="margin-bottom:5px">Edit Center Details</a> <a href="#" class="btn btn-warning btn-sm btn-block" style="margin-bottom:5px" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top">Deactivate Center</a>
-      <hr/> Other Functions:
-      <br/> <a href="beneficiary-create.html" class=""> Upload Beneficiary List</a>
-      <br/> <a href="beneficiary-create.html" class=""> Send Message</a>
-      <br/>
-          <a href="/scc/scc">&larr; Back to SCC List</a>
-      <br/> </div>
-  </div>
-  <div class="row" style="margin-top:20px; margin-bottom:20px">
-    <div class="col-md-12">
-      <h4 class="text-primary" style="margin-top:0px;"><i class="fa fa-warning" style=" color:#F90"></i> Beneficiary who did not collect more than 3 times Consecutively</h4>
-      <table id="highlighttable" class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <!-- <th style="width:100px">NRIC</th> -->
-            <th style="width:100px">Ref</th>
-            <th style="width:100px">NRIC</th>
-            <th>Name</th>
-            <th>Contact</th>
-            <th>Collection Missed</th>
-            <th style="width:100px">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>SC000001</td>
-            <td>S1111111C</td>
-            <td><a href="beneficiary-detail.html">Abdur SCC Beneficiary</a></td>
-            <td>96541656</td>
-            <td>27 Mar 2015, 3 April 2015, 10 April 2015</td>
-            <td class="table-action">
-              <button class="btn btn-default btn-xs btn-warning" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-flash"></span> Deactivate</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="font-size:16px; margin-top:20px">
-        <ul class="nav nav-pills">
-          <!--   <li ><a href="#tab_distribution" data-toggle="pill">Distribution</a></li>
+    <div class="row" style="margin-top:20px; margin-bottom:20px">
+        <div class="col-md-12">
+            <h4 class="text-primary" style="margin-top:0px;"><i class="fa fa-warning" style=" color:#F90"></i> Beneficiary who did not collect more than 3 times Consecutively</h4>
+            <table id="highlighttable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th style="width:100px">NRIC</th> -->
+                        <th style="width:100px">Ref</th>
+                        <th style="width:100px">NRIC</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Collection Missed</th>
+                        <th style="width:100px">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SC000001</td>
+                        <td>S1111111C</td>
+                        <td><a href="beneficiary-detail.html">Abdur SCC Beneficiary</a></td>
+                        <td>96541656</td>
+                        <td>27 Mar 2015, 3 April 2015, 10 April 2015</td>
+                        <td class="table-action">
+                            <button class="btn btn-default btn-xs btn-default" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-eye-close"></span> Deactivate</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="font-size:16px; margin-top:20px">
+                <ul class="nav nav-pills">
+                    <!--   <li ><a href="#tab_distribution" data-toggle="pill">Distribution</a></li>
           <li ><a href="#tab_beneficiaries" data-toggle="pill">Beneficiaries</a></li>
            <li  ><a href="#tab_highlight" data-toggle="pill"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
               Highlight</a></li>-->
-          <li class="active"><a href="#tab_distributions" data-toggle="pill">Distributions</a></li>
-          <li><a href="#tab_beneficiaries" data-toggle="pill">Beneficiaries</a></li>
-          <li><a href="#tab_centeradmins" data-toggle="pill">Center Admins</a></li>
-            <li><a href="#tab_centerhistory" data-toggle="pill">Center History</a></li>
-        </ul>
-      </div>
+                    <li class="active"><a href="#tab_distributions" data-toggle="pill">Distributions</a></li>
+                    <li><a href="#tab_beneficiaries" data-toggle="pill">Beneficiaries</a></li>
+                    <li><a href="#tab_centeradmins" data-toggle="pill">Center Admins</a></li>
+                    <li><a href="#tab_centerhistory" data-toggle="pill">Center History</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="tab-content col-md-12">
-     
-      <!-- tab Open -->
-      <div id="tab_beneficiaries" class="tab-pane">
-        <div class="row" style=" margin-bottom: 20px">
-          <div class="col-lg-3">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
+    <div class="row">
+        <div class="tab-content col-md-12">
+            <!-- tab Open -->
+            <div id="tab_beneficiaries" class="tab-pane">
+                <div class="row" style=" margin-bottom: 20px">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
         <button class="btn btn-default" type="button">Search</button>
       </span> </div>
-            <!-- /input-group -->
-          </div>
-          <div class="col-lg-9">
-            <select id="filter" name="filter" class="multiselect" multiple="multiple" style="display: none;">
-              <option>Active</option>
-              <option>Inactive</option>
-            </select>
-            <div class="btn-group  pull-right">
-              <button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="None selected">None selected <b class="caret"></b></button>
-              <ul class="multiselect-container dropdown-menu">
-                <li>
-                  <a href="javascript:void(0);">
-                    <label class="checkbox">
-                      <input type="checkbox" name="multiselect" value="Active"> Active</label>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);">
-                    <label class="checkbox">
-                      <input type="checkbox" name="multiselect" value="Inactive"> Inactive</label>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="btn-group  pull-right">
-              <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
-            </div>
-          </div>
-        </div>
-
-         <table id="beneficiary-table" class="table table-striped table-bordered table-hover table-condensed">
+                        <!-- /input-group -->
+                    </div>
+                    <div class="col-md-9">
+                        <select id="filter" name="filter" class="multiselect" multiple="multiple" style="display: none;">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                        <div class="btn-group  pull-right">
+                            <button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="None selected">None selected <b class="caret"></b></button>
+                            <ul class="multiselect-container dropdown-menu">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="multiselect" value="Active"> Active</label>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="multiselect" value="Inactive"> Inactive</label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group  pull-right">
+                            <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
+                        </div>
+                    </div>
+                </div>
+                <table id="beneficiary-table" class="table table-striped table-bordered table-hover table-condensed">
   <thead>
     <tr>
       <th id="statusSort" style="width:100px">Status <i class="pull-right fa fa-unsorted"></i> </th>
@@ -278,7 +298,12 @@
   </thead>
   <tbody> 
     <tr>
-      <td>Active</td>
+      <td><span class='label 
+              
+                label-warning
+
+    
+              '>Pending</span></td>
       <td><a href="/scc/beneficiary/detail/">SC000001</a></td>
       <td>S1111111C</td>
       <td>Abdur SCC Beneficiary</td>
@@ -286,11 +311,18 @@
  
       <td>2</td>
       <td style="text-align:center;  white-space:nowrap; width:125px;">
-        <div class="btn-group"> <a class="btn btn-default btn-xs btn-warning" href="#" title="Edit" ><i class="fa fa-edit bigger-120"></i> Deactivate</a>  </div>
+        <div class="btn-group">  
+               <a data-toggle="modal" data-target="#deactivate" data-placement="top" rel="tooltip" class = "lnkDeactivate btn  btn-xs btn-warning" style="width:100px" > <span class="glyphicon glyphicon-check"></span> Approve</a>
+                        </div>
       </td>
     </tr> 
     <tr>
-      <td>Active</td>
+      <td><span class='label 
+               
+              label-success
+
+                  
+              '>Active</span></td>
       <td><a href="/scc/beneficiary/detail/">SC000002</a></td>
       <td>S2222222F</td>
       <td>Abul SCC Beneficiary</td>
@@ -298,11 +330,18 @@
  
       <td>2</td>
       <td style="text-align:center;  white-space:nowrap; width:125px;">
-        <div class="btn-group"> <a class="btn btn-default btn-xs btn-warning" href="#" title="Edit" ><i class="fa fa-edit bigger-120"></i> Deactivate</a>  </div>
+        <div class="btn-group">   
+             <a data-toggle="modal" data-target="#deactivate" data-placement="top" rel="tooltip" class = "lnkDeactivate btn  btn-xs btn-default" style="width:100px"> <span class="glyphicon glyphicon-eye-close"></span> Deactivate</a>
+                  </div>
       </td>
     </tr> 
     <tr>
-      <td>Active</td>
+      <td><span class='label 
+              
+               label-default
+
+                   
+              '>Inactive</span></td>
       <td><a href="/scc/beneficiary/detail/">SC000003</a></td>
       <td>S3333333J</td>
       <td>Agustani SCC Beneficiary </td>
@@ -310,11 +349,18 @@
  
       <td>5</td>
       <td style="text-align:center;  white-space:nowrap; width:125px;">
-        <div class="btn-group"> <a class="btn btn-default btn-xs btn-warning" href="#" title="Edit" ><i class="fa fa-edit bigger-120"></i> Deactivate</a>  </div>
+        <div class="btn-group">  
+              <a data-toggle="modal" data-target="#deactivate" data-placement="top" rel="tooltip" class = "lnkDeactivate btn  btn-xs btn-success" style="width:100px" > <span class="glyphicon glyphicon-eye-open"></span> Activate</a>
+                  </div>
       </td>
     </tr> 
     <tr>
-      <td>Active</td>
+      <td><span class='label 
+               
+              label-success
+
+                  
+              '>Active</span></td>
       <td><a href="/scc/beneficiary/detail/">SC000004</a></td>
       <td>S4444444B</td>
       <td>Ahmadi SCC Beneficiary </td>
@@ -322,11 +368,18 @@
  
       <td>6</td>
       <td style="text-align:center;  white-space:nowrap; width:125px;">
-        <div class="btn-group"> <a class="btn btn-default btn-xs btn-warning" href="#" title="Edit" ><i class="fa fa-edit bigger-120"></i> Deactivate</a>  </div>
+        <div class="btn-group">   
+             <a data-toggle="modal" data-target="#deactivate" data-placement="top" rel="tooltip" class = "lnkDeactivate btn  btn-xs btn-default" style="width:100px"> <span class="glyphicon glyphicon-eye-close"></span> Deactivate</a>
+                  </div>
       </td>
     </tr> 
     <tr>
-      <td>Active</td>
+      <td><span class='label 
+               
+              label-success
+
+                  
+              '>Active</span></td>
       <td><a href="/scc/beneficiary/detail/">SC000005</a></td>
       <td>S5555555J</td>
       <td>Ahmiina SCC Beneficiary</td>
@@ -334,14 +387,15 @@
  
       <td>3</td>
       <td style="text-align:center;  white-space:nowrap; width:125px;">
-        <div class="btn-group"> <a class="btn btn-default btn-xs btn-warning" href="#" title="Edit" ><i class="fa fa-edit bigger-120"></i> Deactivate</a>  </div>
+        <div class="btn-group">   
+             <a data-toggle="modal" data-target="#deactivate" data-placement="top" rel="tooltip" class = "lnkDeactivate btn  btn-xs btn-default" style="width:100px"> <span class="glyphicon glyphicon-eye-close"></span> Deactivate</a>
+                  </div>
       </td>
     </tr>  </tbody>
 </table>
 
-     
-        <div class="clearfix"></div>
-          <nav>
+                <div class="clearfix"></div>
+                <nav>
         <div class="pull-left"><span style="font-size:12px">Page 1 of 5 (5 of 100 rows listed)</span></div>
         <ul class="pagination pagination-sm pull-right" style="margin:0">
           <li>
@@ -363,10 +417,10 @@
           </li>
         </ul>
       </nav>
-      </div>
-      <!-- tab Closed -->
-      <div id="tab_centeradmins" class="tab-pane">
-     <table id="mytable" class="table table-striped table-condensed table-bordered">
+            </div>
+            <!-- tab Closed -->
+            <div id="tab_centeradmins" class="tab-pane">
+                <table id="mytable" class="table table-striped table-condensed table-bordered">
   <thead>
     <tr> 
       <th class="table-select" style="width:80px"> Status </th>
@@ -425,8 +479,8 @@
       <td>91111111</td>
     </tr>  </tbody>
 </table>
-       <div class="clearfix"></div>
-         <nav>
+                <div class="clearfix"></div>
+                <nav>
         <div class="pull-left"><span style="font-size:12px">Page 1 of 5 (5 of 100 rows listed)</span></div>
         <ul class="pagination pagination-sm pull-right" style="margin:0">
           <li>
@@ -448,57 +502,56 @@
           </li>
         </ul>
       </nav>
-      </div>
-     
-      <!-- tab Overview -->
-      <div id="tab_distributions" class="tab-pane active">
-        <div class="row" style=" margin-bottom: 20px">
-          <div class="col-lg-3">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
+            </div>
+            <!-- tab Overview -->
+            <div id="tab_distributions" class="tab-pane active">
+                <div class="row" style=" margin-bottom: 20px">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
         <button class="btn btn-default" type="button">Search</button>
       </span> </div>
-            <!-- /input-group -->
-          </div>
-          <div class="col-lg-9">
-            <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
-            <div class="btn-group  pull-right">
-              <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
-            </div>
-          </div>
-        </div>
-        <table id="resourcetable" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Distribution Type</th>
-              <th>Distribution ID</th>
-              <th>First - Last Collection Time</th>
-              <th>Total Member Collecting</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Distribution Day</td>
-              <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-FRI-20150410</a> </td>
-              <td>10 April 2015 0605PM - 0825PM</td>
-              <td><a href="#">56</a> of 126 members (45%)</td>
-            </tr>
-            <tr>
-              <td>Non Distribution Day</td>
-              <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-SAT-20150411</a></td>
-              <td>11 April 2015 0705PM - 0715PM</td>
-              <td><a href="#">3</a></td>
-            </tr>
-            <tr>
-              <td>Non Distribution Day</td>
-              <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-SUN-20150420</a></td>
-              <td>12 April 2015 0705PM</td>
-              <td><a href="#">1</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="clearfix"></div>
-           <nav>
+                        <!-- /input-group -->
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
+                        <div class="btn-group  pull-right">
+                            <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
+                        </div>
+                    </div>
+                </div>
+                <table id="resourcetable" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Distribution Type</th>
+                            <th>Distribution ID</th>
+                            <th>First - Last Collection Time</th>
+                            <th>Total Member Collecting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Distribution Day</td>
+                            <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-FRI-20150410</a> </td>
+                            <td>10 April 2015 0605PM - 0825PM</td>
+                            <td>56 of 126 members (45%)</td>
+                        </tr>
+                        <tr>
+                            <td>Distribution Day</td>
+                            <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-FRI-20150411</a></td>
+                            <td>3 April 2015 0705PM - 0715PM</td>
+                            <td>56 of 126 members (45%)</td>
+                        </tr>
+                        <tr>
+                            <td>Distribution Day</td>
+                            <td><a href="/scc/distribution/detail/" class="btn-link">SCC-MT-FRI-20150420</a></td>
+                            <td>27 Mar 2015 0705PM</td>
+                            <td>56 of 126 members (45%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+                <nav>
         <div class="pull-left"><span style="font-size:12px">Page 1 of 5 (5 of 100 rows listed)</span></div>
         <ul class="pagination pagination-sm pull-right" style="margin:0">
           <li>
@@ -520,48 +573,43 @@
           </li>
         </ul>
       </nav>
-       
-      </div>
-
-
-<div id="tab_centerhistory" class="tab-pane">
-     <div class="row" style=" margin-bottom: 20px">
-          <div class="col-lg-3">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
+            </div>
+            <div id="tab_centerhistory" class="tab-pane">
+                <div class="row" style=" margin-bottom: 20px">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Keyword Search"> <span class="input-group-btn">
         <button class="btn btn-default" type="button">Search</button>
       </span> </div>
-            <!-- /input-group -->
-          </div>
-         <div class="col-lg-9">
-            <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
-            <div class="btn-group  pull-right">
-              <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
-            </div>
-          </div>
-        </div>
-      <table class="table table-bordered table-striped table-condensed">
-        <thead>
-          <tr>
-            <th style="width:200px">Date</th>
-            <th style="width:150px">Event Type</th>
-            <th style="width:200px">By</th>
-            <th>Event Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>27/3/2015 10:08:11 PM</td>
-            <td>Upload</td>
-            <td>Carol</td>
-            <td>Upload 100 New Beneficiaries</td>
-          </tr>
-        
-        </tbody>
-      </table>
-      <div class="clearfix"></div>
-    
-       <nav>
+                        <!-- /input-group -->
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn btn-default newcontractor_btn  pull-right" id="daterange"><i class="fa fa-calendar" style="margin-right: 5px"></i><span>Jul 17, 15 - Aug 16, 15</span> <b class="caret"></b></div>
+                        <div class="btn-group  pull-right">
+                            <button type="submit" class="btn btn-primary" style="margin-right:5px;"><i class="fa fa-download"></i> Export List</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="width:200px">Date</th>
+                            <th style="width:150px">Event Type</th>
+                            <th style="width:200px">By</th>
+                            <th>Event Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>27/3/2015 10:08:11 PM</td>
+                            <td>Upload</td>
+                            <td>Carol</td>
+                            <td>Upload 100 New Beneficiaries</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+                <nav>
         <div class="pull-left"><span style="font-size:12px">Page 1 of 5 (5 of 100 rows listed)</span></div>
         <ul class="pagination pagination-sm pull-right" style="margin:0">
           <li>
@@ -583,13 +631,10 @@
           </li>
         </ul>
       </nav>
+            </div>
+        </div>
     </div>
-    
-    </div>
-  </div>
-  <div class="clearfix"></div>
-      
-  
+    <div class="clearfix"></div>
 </main>
  </div>
     </div><!-- /.row -->
@@ -619,12 +664,30 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+    
+    <script src="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.js"></script>
     <script src="/scc/assets/js/scheduler.min.js"></script>
     <script src="/scc/vendor/js/jquery.fitvids.js"></script>
     <script src="/scc/vendor/js/bootstrap-multiselect.js"></script>
 
+
+    <!-- Dynamic Script -->  
+     
+    
+
+     <!-- Dynamic Import-->  
+     
+    
+
+
      <!-- Custom JS -->
     <script type="text/javascript" src="/scc/assets/js/scc.js"></script>
+
+
+  
+
 
     <!-- Google Analytics Tracking code -->
     <!-- <script type="text/javascript">

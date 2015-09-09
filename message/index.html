@@ -23,10 +23,19 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css">
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+   <link rel="stylesheet" href="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.css">
    <link rel="stylesheet" href="/scc/assets/css/scheduler.min.css">
    <!-- Customisation  -->
    <link rel="stylesheet" type="text/css" href="/scc/vendor/css/bootstrap-multiselect.css" />
    <link rel="stylesheet" type="text/css" href="/scc/assets/css/scc.css" />
+
+  <!-- build:css({dist,.tmp}) /scc/vendor/css/ext-messages-useminmain.css -->
+   <!-- Dynamic Style -->  
+     
+    
+    <!-- endbuild -->
+    <!-- General Customisation  -->
 
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
@@ -36,6 +45,13 @@
     <meta property="og:description" content="bootstrap portal with navigation">
     <meta property="og:url" content="http://waroengboedaya.github.io/message/">
     <meta property="og:site_name" content="SCC">
+
+
+
+    
+   
+    
+
 
     <!-- Icons -->
 <!--     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -66,15 +82,16 @@
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul id="headermenu" class="nav navbar-nav" style="">
+           <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
             <li><a href="/scc/beneficiary/">Beneficiaries</a></li>
             <li><a href="/scc/scc/">Collection Centres</a></li>
             <li><a href="/scc/collection/">Distribute</a></li>
-            <li><a href="#">Scan Page</a></li>
-            <li><a href="/scc/staff/">Admin &amp; Staff</a></li>
+          <!--   <li><a href="#">Scan Page</a></li> -->
+            <li><a href="/scc/staff/">Users</a></li>
           </ul>
           <form id="logoutForm" >
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/scc/message/"> Messages <span class="label label-info"> 4 </span></a></li>
+             
               <li class="dropdown user-dropdown"> <a href="/Account/Manage" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> systemadmin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/scc/account/"><i class="fa fa-user"></i> Your Account</a></li>
@@ -128,7 +145,7 @@
     <nav>
       <div class="pull-left">
         <div class="btn-group">
-          <button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="None selected">None selected <b class="caret"></b></button>
+          <button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="None selected">All Message Status <b class="caret"></b></button>
           <ul class="multiselect-container dropdown-menu">
             <li>
               <a href="javascript:void(0);">
@@ -159,26 +176,28 @@
         <thead>
           <tr>
             <th style="width:40px"><i class="fa fa-envelope-o"></i> <i class="pull-right fa fa-unsorted"></i> </th>
+            <th style="width:130px">Received <i class="pull-right fa fa-unsorted"></i></th>
             <th >Subject <i class="pull-right fa fa-unsorted"></i></th>
             <th style="width:150px">From <i class="pull-right fa fa-unsorted"></i></th>
       
             <th style="width:200px">Category<i class="pull-right fa fa-unsorted"></i></th>
             <th style="width:200px">SCC <i class="pull-right fa fa-unsorted"></i></th>
-            <th style="width:200px">Received <i class="pull-right fa fa-unsorted"></i></th>
+            
           <!--   <th class="table-number" style="width:120px; text-align:center">Action</th> -->
           </tr>
         </thead>
         <tbody> 
           <tr>
           
-            <td>
-<i class="fa fa-envelope-o"></i>  </td>
+            <td><i class="fa fa-envelope"></i>
+  </td>
+ <td>29/7/2015 10:47</td>
 
             <td><a href="/scc/message/detail">When is goodie bag delivey</a><span class="label label-default pull-right">1 Comments</span> </td>
             <td>Peck Siew Ling</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td>Queenstown Primary School</td>
-            <td>29/7/2015 10:47</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -188,12 +207,13 @@
           
             <td><i class="fa fa-envelope"></i>
   </td>
+ <td>11/4/2015 8:42</td>
 
-            <td><a href="/scc/message/detail">TEST</a><span class="label label-default pull-right">2 Comments</span> </td>
+            <td><a href="/scc/message/detail">Unread Test Message</a><span class="label label-default pull-right">2 Comments</span> </td>
             <td>systemadmin</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td></td>
-            <td>11/4/2015 8:42</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -201,14 +221,15 @@
           </tr> 
           <tr>
           
-            <td>
-<i class="fa fa-envelope-o"></i>  </td>
+            <td><i class="fa fa-envelope"></i>
+  </td>
+ <td>10/4/2015 20:17</td>
 
-            <td><a href="/scc/message/detail">L</a> </td>
+            <td><a href="/scc/message/detail">Test Message</a> </td>
             <td>Cheam Tiew Lin</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td></td>
-            <td>10/4/2015 20:17</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -216,14 +237,15 @@
           </tr> 
           <tr>
           
-            <td>
-<i class="fa fa-envelope-o"></i>  </td>
+            <td><i class="fa fa-envelope"></i>
+  </td>
+ <td>10/4/2015 19:50</td>
 
             <td><a href="/scc/message/detail">SG50 dinner photos</a> </td>
             <td>Cheam Tiew Lin</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td></td>
-            <td>10/4/2015 19:50</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -233,12 +255,13 @@
           
             <td>
 <i class="fa fa-envelope-o"></i>  </td>
+ <td>10/4/2015 14:03</td>
 
             <td><a href="/scc/message/detail">Messages Section</a> </td>
             <td>Carol</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td></td>
-            <td>10/4/2015 14:03</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -248,12 +271,13 @@
           
             <td>
 <i class="fa fa-envelope-o"></i>  </td>
+ <td>10/4/2015 9:53</td>
 
             <td><a href="/scc/message/detail">Hello Marine Terrace Centre Admins! :)</a> </td>
             <td>Carol</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td>Marine Terrace Self Collection Centre</td>
-            <td>10/4/2015 9:53</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -263,12 +287,13 @@
           
             <td>
 <i class="fa fa-envelope-o"></i>  </td>
+ <td>10/3/2015 1:34</td>
 
             <td><a href="/scc/message/detail">test message to all center admin</a> </td>
             <td>systemadmin</td>
               <td>GEN-ENQ: General Enquiries</td>
             <td>Marine Terrace Self Collection Centre</td>
-            <td>10/3/2015 1:34</td>
+           
          
            <!--  <td style="text-align:center;  white-space:nowrap; width:125px;">
               <div class="btn-group"> <a class="btn btn-xs  btn-link" href="../ToDo/edit.cshtml?mID=20140904_212505_5001484429" title="Edit" style="font-size: 11px;"><i class="fa fa-edit bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/copy.cshtml?mID=20140904_212505_5001484429" title="Copy" style="font-size: 11px;"><i class="fa fa-clone bigger-120"></i></a> <a class="btn btn-xs  btn-link" href="../ToDo/delete.cshtml?mID=20140904_212505_5001484429" title="Delete" style="font-size: 11px;"><i class="fa fa-trash-o bigger-120"></i></a> </div>
@@ -326,12 +351,30 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+    
+    <script src="//rawgit.com/wenzhixin/bootstrap-table-fixed-columns/master/bootstrap-table-fixed-columns.js"></script>
     <script src="/scc/assets/js/scheduler.min.js"></script>
     <script src="/scc/vendor/js/jquery.fitvids.js"></script>
     <script src="/scc/vendor/js/bootstrap-multiselect.js"></script>
 
+
+    <!-- Dynamic Script -->  
+     
+    
+
+     <!-- Dynamic Import-->  
+     
+    
+
+
      <!-- Custom JS -->
     <script type="text/javascript" src="/scc/assets/js/scc.js"></script>
+
+
+  
+
 
     <!-- Google Analytics Tracking code -->
     <!-- <script type="text/javascript">
