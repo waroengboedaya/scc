@@ -58,6 +58,37 @@
             })
         }
 
+        //Dashboard Data Table 
+        if (document.querySelector("#dashboard-datatable")) {
+            var table = $('#dashboard-datatable').removeAttr('width').DataTable({
+                scrollY: "350px",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: false,
+                searching:false,
+                info:false,
+                columnDefs: [{
+                    width: "30%",
+                    targets: 0
+                } ],
+                fixedColumns: true,
+                // autoWidth: false
+            });
+            //Trigger resize to ensure correct col width upon loading
+            //http://stackoverflow.com/questions/8278981/datatables-on-the-fly-resizing
+            $('#dashboard-datatable').resize()
+            $('#dashboard-datatable td.heat').hottie({
+                colorArray: [
+                    "#F8696B",
+                    "#FBE983",
+                    "#63BE7B"
+                ],
+                readValue: function(e) {
+                    return $(e).attr("data-hist");
+                }
+            })
+        }
+
 
 
 

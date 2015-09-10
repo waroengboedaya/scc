@@ -77,7 +77,7 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="/scc/"><strong>Portal</strong></a> </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="/scc/dashboard"><strong>Portal</strong></a> </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
             
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -154,11 +154,11 @@
             <div class="row" style="margin-bottom: 10px">
               <div class="col-sm-6">
                 <label for="exampleInput1">Server Name</label>
-                <input class="form-control" name="servername" value="mail.foodheart.org" keyev="true" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input class="form-control" name="servername" value="mail.foodheart.org" keyev="true">
               </div>
               <div class="col-sm-6">
                 <label for="exampleInput1">Port</label>
-                <input class="form-control" name="port" value="25" keyev="true">
+                <input class="form-control" name="port" value="25" keyev="true" style="width:50px">
               </div>
             </div>
             <div class="row" style="margin-bottom: 10px">
@@ -168,7 +168,7 @@
               </div>
               <div class="col-sm-6">
                 <label for="exampleInput1">Password</label>
-                <input type="password" class="form-control" name="userpassword" value="ghackathon2014" keyev="true" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input type="password" class="form-control" name="userpassword" value="ghackathon2014" keyev="true" >
               </div>
             </div>
             <div class="form-actions" style="margin-top: 10px">
@@ -180,6 +180,36 @@
         </div>
       </fieldset>
       <hr class="hr-normal"> </form>
+
+       <fieldset>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="box">
+              <div class="lead">Goodie Bag Size</div>
+              <p class="message-error">System to label goodie bag size of beneficiary according to range setting of family size. </p>
+            </div>
+          </div>
+          <div class="col-sm-7 col-sm-offset-1">
+            <div class="row" style="margin-bottom: 10px">
+              <div class="col-xs-3">
+                <label>Small (Less than) </label>
+                <div class="form-group" > <input type="text" class="form-control" value="2" style="width:50px"> </div>
+              </div>
+               <div class="col-xs-3">
+                <label>Large (More than) </label>
+                <div class="form-group"> <input type="text" class="form-control" value="6" style="width:50px"> </div>
+              </div>
+              <div class="col-xs-6">
+                <label>Else, Medium (Between)</label>
+                <div class="form-group"> <input type="text" class="form-control" value="2 - 6" disabled="" style="width:80px"> </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+ <hr class="hr-normal"/> 
     <form action="/AdminSettings/UpdateNotificationSettings" enctype="multipart/form-data" method="post">
       <input data-val="true" data-val-number="The field SystemPreferenceId must be a number." data-val-required="The SystemPreferenceId field is required." id="SystemPreferenceId" name="SystemPreferenceId" type="hidden" value="1">
       <fieldset>
